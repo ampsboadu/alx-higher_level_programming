@@ -8,7 +8,7 @@ if number < 0:
 
 if digit > 5:
     print("Last digit of {} is {} and is greater than 5".format(number, digit))
-elif last_digit != 0 and last_digit < 6:
+elif digit != 0 and digit < 6:
     text = "Last digit of {} is {} and is less than 6 and not 0"
     print(text.format(number, digit))
 else:
