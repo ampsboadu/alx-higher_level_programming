@@ -21,6 +21,11 @@ class Rectangle():
         width(self, value)
         height(self)
         height(self, value)
+        area(self)
+        perimeter(self)
+        __strr__(self)
+        __repr__(self)
+        __del__(self)
     """
     def __init__(self, width=0, height=0):
         """ initialize new Rectangle """

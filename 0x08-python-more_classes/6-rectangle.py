@@ -22,6 +22,11 @@ class Rectangle():
         width(self, value)
         height(self)
         height(self, value)
+        area(self)
+        perimeter(self)
+        __strr__(self)
+        __repr__(self)
+        __del__(self)
     """
     number_of_instances = 0
 

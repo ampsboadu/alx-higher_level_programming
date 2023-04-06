@@ -21,6 +21,10 @@ class Rectangle():
         width(self, value)
         height(self)
         height(self, value)
+        area(self)
+        perimeter(self)
+        __strr__(self)
+        __repr__(self)
     """
     def __init__(self, width=0, height=0):
         """ initialize new Rectangle """
@@ -56,6 +60,7 @@ class Rectangle():
             raise ValueError('height must be >= 0')
         else:
             self.__height = value
+
     def area(self):
         """ return area (width * height) of rectangles """
         return self.__width * self.__height

@@ -53,21 +53,6 @@ class Rectangle():
         """ return height of rectangle """
         return self. __height
 
-    @width.setter
-    def width(self, value):
-        """ set new value to width. value must int greater than 0 """
-        if not isinstance(value, int):
-            raise TypeError('width must be an integer')
-        elif value < 0:
-            raise ValueError('width must be >= 0')
-        else:
-            self.__width = value
-
-    @property
-    def height(self):
-        """ return height of rectangle """
-        return self. __height
-
     @height.setter
     def height(self, value):
         """ set new value to height. value must int greater than 0 """
