@@ -71,10 +71,5 @@ class Rectangle():
         """ draws rectangle with #pixels """
         if self.__width == 0 or self.__height == 0:
             return ""
-        else:
-            row = '#' * self.__width
-            rec = ""
-            for i in range(self.__height):
-                rec += row
-                rec += '\n'
-            return rec
+        rec = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        return rec
