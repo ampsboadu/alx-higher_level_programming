@@ -79,5 +79,5 @@ class Rectangle():
         return rec
 
     def __repr__(self):
-        """ return string representation of instances created i.e width and height """
+        """ return string representation of instances created """
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
