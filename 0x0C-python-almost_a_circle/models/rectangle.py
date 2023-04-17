@@ -29,7 +29,8 @@ class Rectangle(Base):
         y(self): y getter
         y(self, value): y setter
         area(self): calculate and return area of Rectangle instance
-        display(self): prints in stdout the Rectangle instance with #
+        display(self): print stdout the Rectangle instance with #
+        __str__(self): return str representation of Rectangle instance
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -107,3 +108,9 @@ class Rectangle(Base):
         """draws rectangle with #pixels"""
         rec = "\n".join(["#" * self.__width for rows in range(self.__height)])
         print(rec)
+
+    def __str__(self):
+        """string representation of Rectangle instance"""
+        str1 = f"[{self.__class__.__name__}] ({self.id}) {self.__x}/"
+        str2 = f"{self.__y} - {self.__width}/{self.__height}"
+        return str1 + str2
