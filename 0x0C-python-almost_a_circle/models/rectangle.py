@@ -106,7 +106,9 @@ class Rectangle(Base):
 
     def display(self):
         """draws rectangle with #pixels"""
-        rec = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        rec = ("\n" * self.__y +
+               "\n".join(" " * self.__x + "#" * self.__width
+                         for rows in range(self.__height)))
         print(rec)
 
     def __str__(self):
