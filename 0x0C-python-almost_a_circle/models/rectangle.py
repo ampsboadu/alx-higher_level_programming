@@ -29,6 +29,7 @@ class Rectangle(Base):
         y(self): y getter
         y(self, value): y setter
         area(self): calculate and return area of Rectangle instance
+        display(self): prints in stdout the Rectangle instance with #
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -101,3 +102,8 @@ class Rectangle(Base):
     def area(self):
         """return area of Rectangle instance"""
         return self.__width * self.__height
+
+    def display(self):
+        """draws rectangle with #pixels"""
+        rec = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        print(rec)
