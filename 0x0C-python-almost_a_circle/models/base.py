@@ -5,6 +5,7 @@ Module base contain a class Base
 
 """
 
+
 class Base():
     """
     class Base definition
@@ -21,8 +22,8 @@ class Base():
 
     def __init__(self, id=None):
         """set id or increment id if already set """
-        if id:
-            self.id = Base.__nb_objects
-        else:
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+        else:
+            self.id = id
