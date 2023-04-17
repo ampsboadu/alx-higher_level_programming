@@ -31,6 +31,7 @@ class Rectangle(Base):
         area(self): calculate and return area of Rectangle instance
         display(self): print stdout the Rectangle instance with #
         __str__(self): return str representation of Rectangle instance
+        update(self, *args): updates attributes of Rectangle instance
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -106,13 +107,27 @@ class Rectangle(Base):
 
     def display(self):
         """draws rectangle with #pixels"""
-        rec = ("\n" * self.__y +
-               "\n".join(" " * self.__x + "#" * self.__width
-                         for rows in range(self.__height)))
-        print(rec)
+        print("\n" * self.__y +
+              "\n".join(" " * self.__x + "#" * self.__width
+                        for i in range(self.__height)))
 
     def __str__(self):
         """string representation of Rectangle instance"""
         str1 = f"[{self.__class__.__name__}] ({self.id}) {self.__x}/"
         str2 = f"{self.__y} - {self.__width}/{self.__height}"
         return str1 + str2
+
+    def update(self, *args):
+        """updates attributes of Rectangle instance with args"""
+        if args:
+            for i, j in enumerate(args):
+                if i == 0:
+                    self.id = j
+                elif i == 1:
+                    self.width = j
+                elif i == 2:
+                    self.height = j
+                elif i == 3:
+                    self.x = j
+                else:
+                    self.y = j
