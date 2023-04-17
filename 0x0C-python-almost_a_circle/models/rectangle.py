@@ -117,7 +117,7 @@ class Rectangle(Base):
         str2 = f"{self.__y} - {self.__width}/{self.__height}"
         return str1 + str2
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates attributes of Rectangle instance with args"""
         if args:
             for i, j in enumerate(args):
@@ -131,3 +131,14 @@ class Rectangle(Base):
                     self.x = j
                 else:
                     self.y = j
+        else:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'width' in kwargs:
+                self.width = kwargs['width']
+            if 'height' in kwargs:
+                self.height = kwargs['height']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
