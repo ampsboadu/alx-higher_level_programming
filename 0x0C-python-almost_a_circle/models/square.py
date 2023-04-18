@@ -23,7 +23,7 @@ class Square(Rectangle):
         size(self): size getter
         size(self, value): size setter
         __str__(self): return str representation of Square instance
-
+        update(self, *args, **kwargs): updates attributes of Square instance
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -47,3 +47,26 @@ class Square(Rectangle):
         str1 = f"[{self.__class__.__name__}] ({self.id}) {self.x}/"
         str2 = f"{self.y} - {self.size}"
         return str1 + str2
+
+    def update(self, *args, **kwargs):
+
+        """updates attrs of Square instance with args & kwargs"""
+        if args:
+            for i, j in enumerate(args):
+                if i == 0:
+                    self.id = j
+                elif i == 1:
+                    self.size = j
+                elif i == 2:
+                    self.x = j
+                else:
+                    self.y = j
+        else:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'size' in kwargs:
+                self.size = kwargs['size']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
