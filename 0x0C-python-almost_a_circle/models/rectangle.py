@@ -32,6 +32,7 @@ class Rectangle(Base):
         display(self): print stdout the Rectangle instance with #
         __str__(self): return str representation of Rectangle instance
         update(self, *args): updates attributes of Rectangle instance
+        to_dictionary(self): returns dict rep of Rectangle instance
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -142,3 +143,13 @@ class Rectangle(Base):
                 self.x = kwargs['x']
             if 'y' in kwargs:
                 self.y = kwargs['y']
+
+    def to_dictionary(self):
+        """return dic representation of Rectangle instance"""
+        dic = {}
+        dic['id'] = self.id
+        dic['width'] = self.width
+        dic['height'] = self.height
+        dic['x'] = self.x
+        dic['y'] = self.y
+        return dic
