@@ -24,6 +24,7 @@ class Square(Rectangle):
         size(self, value): size setter
         __str__(self): return str representation of Square instance
         update(self, *args, **kwargs): updates attributes of Square instance
+        to_dictionary(self): return dict rep of Square instance
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -70,3 +71,12 @@ class Square(Rectangle):
                 self.x = kwargs['x']
             if 'y' in kwargs:
                 self.y = kwargs['y']
+
+    def to_dictionary(self):
+        """return dic representation of Square instance"""
+        dic = {}
+        dic['id'] = self.id
+        dic['size'] = self.size
+        dic['x'] = self.x
+        dic['y'] = self.y
+        return dic
