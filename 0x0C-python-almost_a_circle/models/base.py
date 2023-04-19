@@ -15,8 +15,10 @@ class Base():
         __nb_objects: int
 
     Methods:
-        __init__(self, id=None)
-        to_json_string(list_dictionaries)
+        __init__(self, id=None):
+        to_json_string(list_dictionaries):
+        save_to_file(cls, list_objs):
+        from_json_string(json_string):
     """
 
     __nb_objects = 0
@@ -46,3 +48,10 @@ class Base():
 
         with open(cls.__name__ + ".json", 'w') as f:
             f.write(cls.to_json_string(objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string rep"""
+        if json_string is None or len(json_string) == 0:
+            json_string = '[]'
+        return json.loads(json_string)
